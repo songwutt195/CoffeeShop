@@ -64,3 +64,18 @@ class Snack(Product): # Inherit from Product
         else:
             return False
 
+class MemberCustomer(Customer):
+    def __init__(self, id: int, name: str, gender: str, age: int):
+        super().__init__(gender, age)
+        self.id = id
+        self.name = name
+        self.tpe = 'member'
+        self.points = 100  # Initial points for members
+
+    def discount(self, order):
+        if self.points > 10: # 10% discount for members
+            for item in order.items:
+                if item.type == 'main':
+                    discount_amount = 0.1 * item.price
+                    item.discount(int(discount_amount))
+            self.points -= 10
