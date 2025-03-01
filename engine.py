@@ -40,7 +40,7 @@ class Payment:
                     redeemed_points += 1
         if order.total_price < 0:
             order.total_price = 0
-        print(f"This order is {order.total_price} baht and redeemed {redeemed_points} points.")
+        return f"This order is {order.total_price} baht and redeemed {redeemed_points} points."
 
 class Drink(Product): # Inherit from Product
     def __init__(self, name: str, price: int):
