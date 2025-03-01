@@ -1,7 +1,8 @@
 import streamlit as st
 import pandas as pd
 from datetime import datetime
-from engine import Customer, Drink, Snack, Order, Payment, MemberCustomer
+from engine import Customer, Drink, Snack, Order, Payment
+from engine import MemberCustomer
 
 if 'customer_id' not in st.session_state:
     st.session_state.customer_id = ''
